@@ -1,4 +1,8 @@
 # COSAS A MANO
+1. Get admin pass:
+```bash
+kubectl exec cjoc-0 --namespace cloudbees-core -- cat /var/jenkins_home/secrets/initialAdminPassword)"
+```
 0. Go through wizard
 1. Create Managed controller invincible-gtg:
   New item -> Managed controller

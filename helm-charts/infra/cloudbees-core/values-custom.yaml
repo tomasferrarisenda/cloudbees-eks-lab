@@ -5,6 +5,7 @@
 #       secrets:
 #         adminPassword: hola
 OperationsCenter:
+  Platform: eks
   Ingress:
     # OperationsCenter.Ingress.Class -- Ingress class to use for OC and MM ingresses
     # Should be set to the same value as ingress-nginx.controller.ingressClassResource.name if enabled
@@ -21,3 +22,17 @@ OperationsCenter:
       alb.ingress.kubernetes.io/success-codes: '200'
       alb.ingress.kubernetes.io/healthy-threshold-count: '2'
       alb.ingress.kubernetes.io/unhealthy-threshold-count: '2'
+
+Persistence:
+  # Persistence.StorageClass -- Persistent Volume Storage Class for Jenkins Home
+  # If defined, storageClassName: <storageClass>.
+  # If set to "-", storageClassName: "", which disables dynamic provisioning.
+  # If undefined (the default) or set to null, the default storage class will be used,
+  # unless specified otherwise below.
+  # If setting OperationsCenter.Platform == gke, a storage class backed with
+  # SSD drives will be created by this chart and used automatically.
+  #
+  # StorageClass: "-"
+  StorageClass: 'gp2'
+  Size: 5Gi
+
