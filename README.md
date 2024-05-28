@@ -1,19 +1,19 @@
 # COSAS A MANO
 1. Get admin pass:
 ```bash
-kubectl exec cjoc-0 --namespace cloudbees-core -- cat /var/jenkins_home/secrets/initialAdminPassword)"
+kubectl exec cjoc-0 --namespace cloudbees-core -- cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 0. Go through wizard
 1. Create Managed controller invincible-gtg:
   New item -> Managed controller
     Disk size: (5gb)
-    Storgaeclass: standard
+    <!-- Storgaeclass: standard
     Memory: 1024
-    Cpu: 1
-2. Port forward invincible-gtg controller:
+    Cpu: 1 -->
+<!-- 2. Port forward invincible-gtg controller:
 ```bash
 kubectl port-forward -n cloudbees-core service/invincible-gtg 8082:80 
-```
+``` -->
 Acces the invincible-gtg managed controller UI
 3. Go through wizard
 3. Create credentials in invincible-gtg managed controller for dockerhub
@@ -33,7 +33,12 @@ Acces the invincible-gtg managed controller UI
     GitHub
       Repository HTTPS URL: https://github.com/tomasferrarisenda/template-docker
 
-10. Create Kubernetes pod template for docker with label containerBuilds
+10. Create Kubernetes pod template:
+   Name: docker
+   Labels: containerBuilds
+   Usage: Only build jobs with label expressions matching the node
+   Container image:
+
 9. New item -> Container Build
 
 
