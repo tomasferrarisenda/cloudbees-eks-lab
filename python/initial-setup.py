@@ -96,9 +96,9 @@ print_gradually("Give me a sec... ")
 # Create a dictionary with the variable names and their values
 data = {
     # "AATT_FULL_NAME": full_name,
-    "AATT_APP_NAME": app_name,
+    "cloudbees-eks-lab": app_name,
     "AATT_GITHUB_USERNAME": github_username,
-    "AATT_AWS_REGION": aws_region,
+    "us-east-1": aws_region,
     "AATT_DOCKERHUB_USERNAME": dockerhub_username,
     # "AATT_USER_EMAIL": user_email,
 }
