@@ -1,3 +1,41 @@
+# COSAS A MANO
+0. Go through wizard
+1. Create Managed controller invincible-gtg:
+  New item -> Managed controller
+    Disk size: (5gb)
+    Storgaeclass: standard
+    Memory: 1024
+    Cpu: 1
+2. Port forward invincible-gtg controller:
+```bash
+kubectl port-forward -n cloudbees-core service/invincible-gtg 8082:80 
+```
+Acces the invincible-gtg managed controller UI
+3. Go through wizard
+3. Create credentials in invincible-gtg managed controller for dockerhub
+3. Create credentials in invincible-gtg managed controller for github with PAT
+5. Add library:
+  On invincible-gtg managed controller go Manage Jenkins -> System -> Global Pipeline Libraries  
+    Name: docker-shared-lib
+    Default version: main
+    GitHub
+      Repository HTTPS URL: https://github.com/tomasferrarisenda/cloudbees-core-minikube-lab
+      Library Path: cloudbees/global-shared-library
+
+6. Add template:
+  Go to Pipeline Template Catalog -> Add catalog
+    Branch: main
+    Check for template catalog updates every: 15 minutes
+    GitHub
+      Repository HTTPS URL: https://github.com/tomasferrarisenda/template-docker
+
+10. Create Kubernetes pod template for docker with label containerBuilds
+9. New item -> Container Build
+
+
+
+
+
 <a href="https://www.instagram.com/ttomasferrari/">
     <img align="right" alt="Abhishek's Instagram" width="22px" 
     src="https://i.imgur.com/EzpyGdV.png" />
