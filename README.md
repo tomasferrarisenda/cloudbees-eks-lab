@@ -19,7 +19,7 @@ Acces the invincible-gtg managed controller UI
     Name: docker-shared-lib
     Default version: main
     GitHub
-      Repository HTTPS URL: https://github.com/tomasferrarisenda/cloudbees-core-minikube-lab
+      Repository HTTPS URL: https://github.com/tomasferrarisenda/cloudbees-eks-lab
       Library Path: cloudbees/global-shared-library
 
 6. Add template:
