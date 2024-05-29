@@ -27,7 +27,7 @@ jobs:
       - name: Delete applications & ArgoCD
         run: | 
           # We delete app of apps application
-          kubectl delete -n argocd applications.argoproj.io argocd-app-of-apps
+          kubectl delete -n argocd applications.argoproj.io app-of-apps
 
           # We delete every other application
           kubectl delete -n argocd applications.argoproj.io --all
